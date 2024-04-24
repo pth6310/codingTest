@@ -1,7 +1,7 @@
 package program;
 import java.util.*;
 
-public class SulutionPoket {
+public class 완주하지못한 {
     public int solution(int[] nums) {
         //int[] nums = new int[]{1, 2, 3, 4};
         int max = nums.length / 2;

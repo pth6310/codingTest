@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Yack9506 {
+public class Yack1978 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Yack2501 {
+public class Yack9506 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
