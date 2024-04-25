@@ -1,44 +1,36 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Yack9506 {
+public class Yack1978 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int count = scanner.nextInt();
 
-
-        ArrayList<Integer> c = new ArrayList<>();
-
-        while (true) {
+        // 소수의 개수를 담을 변수
+        int res = 0;
+        for (int i = 0; i < count; i++) {
             int a = scanner.nextInt();
-            int total = 0;
 
-            if (a == -1) {
-                break;
+            // a가 1이면 소수가 아니기때문에 아무것도 담지 않음
+            if (a==1){
+                res += 0;
+                continue;
             }
 
-            for (int i = 1; i < a; i++) {
-                if (a % i == 0) {
-                    c.add(i);
-                    total += i;
+            // 약수인지 확인
+            int x = 0;
+            for (int j = 2; j < a; j++) {
+                if (a%j == 0) {
+                    x++;
                 }
             }
 
-            if (a == total) {
-                System.out.print(a + " = " );
-                for (int i = 0; i < c.size(); i++) {
-                    if (i == c.size() - 1) {
-                        System.out.print(c.get(i));
-                    } else {
-                        System.out.print( c.get(i) + " + ");
-                    }
-                }
-                System.out.println();
-            } else {
-                System.out.println(a + " is NOT perfect.");
+            // x가 0이면 소수이기 때문에 res ++함
+            if (x == 0){
+                res++;
             }
-
-            c.clear();
 
         }
+        System.out.println(res);
     }
 }

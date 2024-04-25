@@ -1,41 +1,44 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Yack2501 {
+public class Yack9506 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+
 
         ArrayList<Integer> c = new ArrayList<>();
 
-        for (int i = 0; i < a; i++ ) {
-            if (i % a == 0) {
-                c.add(i);
+        while (true) {
+            int a = scanner.nextInt();
+            int total = 0;
+
+            if (a == -1) {
+                break;
             }
+
+            for (int i = 1; i < a; i++) {
+                if (a % i == 0) {
+                    c.add(i);
+                    total += i;
+                }
+            }
+
+            if (a == total) {
+                System.out.print(a + " = " );
+                for (int i = 0; i < c.size(); i++) {
+                    if (i == c.size() - 1) {
+                        System.out.print(c.get(i));
+                    } else {
+                        System.out.print( c.get(i) + " + ");
+                    }
+                }
+                System.out.println();
+            } else {
+                System.out.println(a + " is NOT perfect.");
+            }
+
+            c.clear();
+
         }
-
-        if (c.size() < b) {
-            System.out.println("0");
-        } else {
-            System.out.println(c.get(b-1));
-        }
-
-
-
-
-//        ArrayList<Integer> list = new ArrayList<>();
-//
-//        // list 안에 a의 약수 넣기
-//        for (int i = 1; i <= a; i++) {
-//            if (a % i == 0) {
-//                list.add(i);
-//            }
-//        }
-//        // b-1번째 인덱스 꺼내기. 만약 b보다 list.size 가 작으면 0 출력
-//        if (list.size() < b) {
-//            System.out.println(0);
-//        } else {
-//            System.out.println(list.get(b - 1));
-//        }
     }
 }

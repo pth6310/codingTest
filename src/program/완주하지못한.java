@@ -1,21 +1,29 @@
 package program;
+
 import java.util.*;
 
-public class SulutionPoket {
-    public int solution(int[] nums) {
-        //int[] nums = new int[]{1, 2, 3, 4};
-        int max = nums.length / 2;
+public class 완주하지못한 {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        HashMap<String, Integer> map = new HashMap<>();
 
-        HashSet<Integer> hashSet = new HashSet<>();
+        ArrayList list = new ArrayList<>();
 
-        for (int n : nums) {
-            hashSet.add(n); //중복 제거
+
+        for (String player : participant) {
+            map.put(player, map.getOrDefault(player, 0) + 1);
         }
 
-        if (max >= hashSet.size()) {
-            return hashSet.size();
-        } else {
-            return max;
+        for (String player : completion) {
+            map.put(player, map.get(player) - 1);
         }
+
+        for (String key : map.keySet()) {
+            if(map.get(key) > 0) {
+                return answer = key;
+            }
+        }
+
+        return answer;
     }
 }
